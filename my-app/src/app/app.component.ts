@@ -9,5 +9,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'my-app';
+  title:string;
+
+  constructor(){
+    this.title = "Learning Angular for Cloud It";
+  }
 }

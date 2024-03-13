@@ -39,6 +39,14 @@ Angular Interview Questions
 CRUD app with Angular
 
 
+_______________Object oriented programming
+Classes, Objects, Interfaces, Inheritance, Encapsulations
+
+_______________Type Script As a programming Language
+
+
+
+
 ____________Architecture
 Modules
     -Group code together
@@ -51,7 +59,9 @@ Components
     -For UI's
     -Reusability
     -one way data flow
-    -imuutable state
+    -imutable state
+
+    Basic Structure of Angular Components
 
 Directives
     -Structural if statements <p*ngif==true/>
@@ -61,7 +71,7 @@ Directives
 Router
     -Is built in 
     -Authorization for your web pages
-    
+
 Pipes
     -transforming data
     e.g turning ISO dates into something more readable
@@ -79,3 +89,10 @@ install typescript too
 
 __________Creating a new app
 ng new my-app
+
+
+
+______________String Interpolations {{}}
+Putting a number or a string inside two curly braces and then they get displayed on the web page
+Displaying variables on the screen 
+ 
