@@ -43,6 +43,7 @@ _______________Object oriented programming
 Classes, Objects, Interfaces, Inheritance, Encapsulations
 
 _______________Type Script As a programming Language
+_______________Angular Life Cycle
 
 
 
@@ -154,3 +155,39 @@ In addition to string interpolation, property binding can be used to bind proper
     }
 
 
+
+___________Two way binding [()] - banana  box'
+[] - property binding
+() - events binding
+Listens for DOM element change
+Building robust and complex forms with all types of validations
+Prepolutated forms, Updating forms
+
+Same as states in react
+
+ngModel
+    -Provides the bindings
+    -Validations
+    -behind the scenes
+    -only works on inouts
+
+Two-way binding is a feature commonly used in web development frameworks like Angular, Vue.js, and React. It allows synchronization of data between the component class (or state) and the user interface (UI) elements. With two-way binding, changes made to the UI elements by the user are automatically reflected in the component's data, and vice versa.
+
+In Angular, two-way binding is achieved using the ngModel directive. It combines property binding and event binding to achieve data synchronization between the component class and the UI.
+
+Here's an example of two-way binding in Angular:
+    import { Component } from '@angular/core';
+
+    @Component({
+    selector: 'app-example',
+    template: `
+        <input [(ngModel)]="name" placeholder="Enter your name">
+        <p>Hello, {{ name }}!</p>
+    `
+    })
+    export class ExampleComponent {
+    name: string = ''; // Initial value for the name property
+    }
+In this example, we have an <input> element with [(ngModel)]="name". This syntax sets up two-way binding for the name property of the component class. When the user types in the input field, the name property is automatically updated to reflect the changes. Similarly, if the value of the name property in the component class changes, it will be reflected in the input field.
+
+Two-way binding simplifies the process of managing user input and updating the UI accordingly, making it a powerful tool for building interactive web applications. However, it's important to use it judiciously, as excessive use of two-way binding can lead to complex data flow and make code harder to understand and maintain.
