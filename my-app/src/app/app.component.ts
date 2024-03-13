@@ -12,8 +12,13 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title:string;
   ex:string = "Ashley";
+  pokemonName:string ="";
 
   constructor(){
     this.title = "Learning Angular for Cloud It";
+  }
+
+  handleClick(value: any){
+    console.log(value)
   }
 }

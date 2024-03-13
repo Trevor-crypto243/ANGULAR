@@ -44,6 +44,7 @@ Classes, Objects, Interfaces, Inheritance, Encapsulations
 
 _______________Type Script As a programming Language
 _______________Angular Life Cycle
+_______________Vanilla Js Refreshers
 
 
 
@@ -191,3 +192,43 @@ Here's an example of two-way binding in Angular:
 In this example, we have an <input> element with [(ngModel)]="name". This syntax sets up two-way binding for the name property of the component class. When the user types in the input field, the name property is automatically updated to reflect the changes. Similarly, if the value of the name property in the component class changes, it will be reflected in the input field.
 
 Two-way binding simplifies the process of managing user input and updating the UI accordingly, making it a powerful tool for building interactive web applications. However, it's important to use it judiciously, as excessive use of two-way binding can lead to complex data flow and make code harder to understand and maintain.
+
+
+
+_________________Template refference variables #
+Html elements access
+Helps share information with other html elements in the DOM
+        <input #phone placeholder="Phone Number"/>
+        <button type="button" (click)="callPhone(phone.value)">Call</button>
+
+
+Template reference variables in Angular allow you to interact with elements in your template from your component class. They provide a way to get access to DOM elements, components, or directives within your template and perform actions such as reading values, modifying properties, or calling methods.
+
+Template reference variables are defined using the hash (#) symbol followed by a name. You can then use this name to reference the element in your component class.
+
+Here's an example of how to use a template reference variable in Angular:
+    <!-- app.component.html -->
+    <input #nameInput type="text">
+    <button (click)="logName()">Log Name</button>
+
+    // app.component.ts
+    import { Component, ViewChild, ElementRef } from '@angular/core';
+
+    @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css']
+        })
+        export class AppComponent {
+        @ViewChild('nameInput') nameInputRef: ElementRef;
+
+        logName() {
+            console.log(this.nameInputRef.nativeElement.value);
+        }
+    }
+
+    We define a template reference variable #nameInput on the input element.
+    We use @ViewChild('nameInput') to query for the input element in the component class.
+    When the button is clicked, the logName() method is called, which retrieves the value of the input element using nameInputRef.nativeElement.value and logs it to the console.
+    Template reference variables provide a convenient way to work with elements in your template without relying on complex selectors or query methods. They are commonly used for tasks such as handling form inputs, accessing child components, or interacting with DOM elements.
+

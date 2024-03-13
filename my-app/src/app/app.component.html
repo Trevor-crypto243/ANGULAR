@@ -230,6 +230,11 @@
       <p>{{title}}</p>
       <input [(ngModel)]="ex"/>
       <p>{{ex}}</p> 
+
+      <p>Template Refference Variable</p>
+      <input type="text" #pokemonName/>
+      <button (click)="handleClick(pokemonName.value)">Template Refference Test</button>
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
