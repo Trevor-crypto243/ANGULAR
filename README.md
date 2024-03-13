@@ -92,7 +92,65 @@ ng new my-app
 
 
 
-______________String Interpolations {{}}
+______________String Interpolations {{}} - for variables
 Putting a number or a string inside two curly braces and then they get displayed on the web page
 Displaying variables on the screen 
+
+
+String interpolation is a technique used in programming languages to embed variables or expressions directly within string literals. It allows developers to create dynamic strings by inserting the values of variables or the results of expressions into predefined string templates.
+
+The syntax for string interpolation varies depending on the programming language, but it typically involves using special markers or placeholders inside the string to indicate where the variable or expression should be inserted. When the string is evaluated or rendered, these markers are replaced with the corresponding values.
+
+For example, in Python, string interpolation can be achieved using the f-string syntax:
+
+
+name = "John"
+age = 30
+message = f"My name is {name} and I am {age} years old."
+print(message)  # Output: "My name is John and I am 30 years old."
+In JavaScript, string interpolation can be achieved using template literals:
+
+const name = "John";
+const age = 30;
+const message = `My name is ${name} and I am ${age} years old.`;
+console.log(message);  // Output: "My name is John and I am 30 years old."
+String interpolation is a powerful feature that makes it easier to create readable and maintainable code by reducing the need for manual string concatenation and formatting. It is commonly used in tasks such as generating dynamic messages, constructing URLs, formatting output, and building complex strings with embedded variables or expressions.
  
+
+
+____________Property Binding  - for properties/attributes [ ]
+The brackets are a form of type checking
+Property binding is a feature commonly found in web development frameworks such as Angular, React, and Vue.js. It allows you to set the value of an HTML element attribute or property dynamically based on a value in the component's data or state.
+
+In Angular, property binding is typically used to bind data from the component class to HTML element properties or attributes. It uses square brackets ([ ]) to indicate that the value being assigned to the property is dynamically bound.
+
+For example, consider an Angular component with a property named pageTitle:
+
+    import { Component } from '@angular/core';
+
+    @Component({
+    selector: 'app-root',
+    template: `
+        <h1>{{ pageTitle }}</h1>
+    `
+    })
+    export class AppComponent {
+    pageTitle = 'Welcome to Angular!';
+    }
+
+In addition to string interpolation, property binding can be used to bind properties or attributes of HTML elements directly. For example:
+
+    import { Component } from '@angular/core';
+
+    @Component({
+    selector: 'app-root',
+    template: `
+        <img [src]="imageUrl" [alt]="imageAlt">
+    `
+    })
+    export class AppComponent {
+    imageUrl = 'https://example.com/image.jpg';
+    imageAlt = 'Example Image';
+    }
+
+
