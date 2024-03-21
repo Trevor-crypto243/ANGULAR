@@ -366,8 +366,26 @@ ngIf is a fundamental directive in Angular for controlling the visibility of ele
 
 
 
+_____________________ngFor
+Way to loop throuh database data
+You can only lopp through lists
+pokemons: pokemon[] = [{
+    id:1,
+    name: "Trevor",
+    type:"Electric"
+},{
+    id:2,
+    name: "Kessy",
+    type:"water"
+}]
 
 
+
+<tr *ngFor="let pokemon of pokemnos">
+<td class="pokemon-td">
+{{pokemon.name}}
+</td>
+</tr>
 
 
 
