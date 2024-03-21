@@ -280,6 +280,94 @@ Class binding in Angular allows you to dynamically add or remove CSS classes to 
 
 
 
+_______________________ngStyle
+can be used the same way with the ngClass dynamically
+
+The ngStyle directive in Angular allows you to dynamically apply CSS styles to HTML elements based on expressions in your component. It provides a way to set inline styles directly on elements, giving you flexibility to adjust styles dynamically based on component properties or expressions.
+
+Here's how ngStyle works:
+    <div [ngStyle]="{'color': textColor, 'font-size': fontSize + 'px'}">This div has dynamic styles applied</div>
+    export class MyComponent {
+        textColor: string = 'red';
+        fontSize: number = 20;
+    }
+
+    You can also dynamically compute the styles based on component logic:
+    <div [ngStyle]="computeStyles()">This div has dynamic styles computed from the computeStyles() function</div>
+
+    export class MyComponent {
+        computeStyles() {
+            return {
+            'color': this.isSpecial ? 'red' : 'blue',
+            'font-size': this.isSpecial ? '24px' : '16px'
+            };
+        }
+        }
+
+
+
+____________________ngIf then else
+Conditionally render search results
+The ngIf directive in Angular is used to conditionally render or remove elements from the DOM based on the evaluation of an expression. It's a powerful tool for displaying or hiding content dynamically in your Angular templates.
+
+Here's how ngIf works:
+
+Condition Evaluation: The ngIf directive evaluates an expression. If the expression is truthy, the element and its children are rendered in the DOM. If the expression is falsy, the element and its children are removed from the DOM.
+
+Adding and Removing Elements: When the expression bound to ngIf changes its value, Angular adds or removes the associated DOM elements accordingly, providing a seamless way to toggle visibility based on component logic.
+
+Here's an example of using ngIf:
+
+<div *ngIf="isLoggedIn">
+  <p>Welcome, {{ username }}!</p>
+  <button (click)="logout()">Logout</button>
+</div>
+
+
+In this example, the <div> element and its content are rendered only if the isLoggedIn property in your component class is true. If isLoggedIn is false, the entire <div> is removed from the DOM.
+
+In your component class:
+
+export class MyComponent {
+  isLoggedIn: boolean = false;
+  username: string = '';
+
+  login() {
+    // Some logic to perform login
+    this.isLoggedIn = true;
+    this.username = 'user123';
+  }
+
+  logout() {
+    // Some logic to perform logout
+    this.isLoggedIn = false;
+    this.username = '';
+  }
+}
+
+Here, the login() and logout() methods change the value of isLoggedIn, triggering the rendering or removal of the content based on whether the user is logged in or not.
+
+You can also use ngIf with an else block to conditionally render different content:
+<div *ngIf="isLoggedIn; else notLoggedIn">
+  <p>Welcome, {{ username }}!</p>
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #notLoggedIn>
+  <p>Please log in to continue.</p>
+  <button (click)="login()">Login</button>
+</ng-template>
+In this case, if isLoggedIn is true, the content inside the first <div> is rendered. Otherwise, the content inside the else block (notLoggedIn) is rendered.
+
+ngIf is a fundamental directive in Angular for controlling the visibility of elements based on dynamic conditions, making it essential for building dynamic and responsive user interfaces.
+
+
+
+
+
+
+
+
+
 
 
 
