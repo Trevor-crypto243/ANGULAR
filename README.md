@@ -280,6 +280,35 @@ Class binding in Angular allows you to dynamically add or remove CSS classes to 
 
 
 
+_______________________ngStyle
+can be used the same way with the ngClass dynamically
+
+The ngStyle directive in Angular allows you to dynamically apply CSS styles to HTML elements based on expressions in your component. It provides a way to set inline styles directly on elements, giving you flexibility to adjust styles dynamically based on component properties or expressions.
+
+Here's how ngStyle works:
+    <div [ngStyle]="{'color': textColor, 'font-size': fontSize + 'px'}">This div has dynamic styles applied</div>
+    export class MyComponent {
+        textColor: string = 'red';
+        fontSize: number = 20;
+    }
+
+    You can also dynamically compute the styles based on component logic:
+    <div [ngStyle]="computeStyles()">This div has dynamic styles computed from the computeStyles() function</div>
+
+    export class MyComponent {
+        computeStyles() {
+            return {
+            'color': this.isSpecial ? 'red' : 'blue',
+            'font-size': this.isSpecial ? '24px' : '16px'
+            };
+        }
+        }
+
+
+
+
+
+
 
 
 
