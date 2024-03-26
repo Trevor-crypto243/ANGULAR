@@ -4,6 +4,11 @@ Made by google
 Used to be called Angular Js
 Changed to Angular after shifting over to typescript
 
+Decorator pattern
+
+Stack Memory
+Heap Memory
+
 ________________________Opinionated
 Yes, Angular is considered opinionated. An opinionated framework imposes certain conventions, guidelines, and patterns on developers, often providing built-in solutions and enforcing specific ways of doing things. Angular, developed by Google, follows the opinionated approach by providing a structured and comprehensive framework with a set of conventions and best practices. It encourages developers to follow the Angular way of building applications, including the use of TypeScript, component-based architecture, dependency injection, and reactive programming with RxJS.
 
@@ -45,6 +50,49 @@ Classes, Objects, Interfaces, Inheritance, Encapsulations
 _______________Type Script As a programming Language
 _______________Angular Life Cycle
 _______________Vanilla Js Refreshers
+_______________Lifecycle
+ngIniti
+
+______________state
+signal
+
+
+
+
+____________Angular Architecture Smart and dumb Components
+In Angular development, the concept of "smart" and "dumb" components is often used to organize the architecture of an application, especially in larger projects. These terms refer to different types of components based on their responsibilities and interactions within the application.
+
+Smart Components (Container Components):
+
+Responsibilities: Smart components are responsible for orchestrating the behavior of the application. They often represent pages or major sections of the application.
+
+Interactions: Smart components interact directly with services, fetch data from APIs, manage application state, and pass data down to child components.
+
+Examples: A smart component might be a dashboard component that fetches user data from a service, manages user authentication, and passes user-related data to child components such as profile components or settings components.
+
+Dumb Components (Presentational Components):
+
+Responsibilities: Dumb components are primarily concerned with presenting data and receiving user input. They don't have any knowledge of the application's state or services.
+
+Interactions: Dumb components receive data through input bindings and emit events to notify the parent components about user actions.
+
+Examples: Dumb components include things like buttons, input fields, cards, and other UI elements. They focus on rendering UI elements based on the input they receive and emitting events when user interactions occur.
+
+Using this architecture has several benefits:
+
+Separation of Concerns: Smart components handle business logic and state management, while dumb components focus solely on presentation. This separation makes the codebase easier to understand, maintain, and test.
+
+Reusability: Dumb components are highly reusable since they are not tied to specific data or logic. They can be used in multiple parts of the application without modification.
+
+Scalability: The architecture scales well with the size of the application. As the application grows, it's easier to manage complexity by dividing it into smaller, more manageable pieces.
+
+By following the smart/dumb component architecture, developers can create Angular applications that are more modular, maintainable, and easier to extend or refactor as needed.
+
+
+
+
+
+
 
 
 
@@ -389,4 +437,92 @@ pokemons: pokemon[] = [{
 
 
 
+_____________________modules
+Allow for lazy loading - different modules will only load when being used
+Provides logical separation
+Prevents the whole treaa from loading
 
+
+ng generate module pokemon
+Generating UI component
+    ng generate component pokemon/pokemon-list --module=pokemon/pokemon.module.ts
+
+In Angular, modules are a way to organize your application into cohesive blocks of functionality. They help in managing the dependencies and configuration of your application. There are mainly two types of modules in Angular:
+
+1. Root/Core Module (AppModule): This is the main module of your Angular application, conventionally named AppModule. It is responsible for bootstrapping the application and importing other modules required by the application. The root module is usually declared in the app.module.ts file.
+
+        import { NgModule } from '@angular/core';
+        import { BrowserModule } from '@angular/platform-browser';
+        import { AppComponent } from './app.component';
+
+        @NgModule({
+        declarations: [
+            AppComponent
+        ],
+        imports: [
+            BrowserModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+
+
+
+2. Feature Modules: These are additional modules that you create to organize and encapsulate specific features or components of your application. Feature modules help in keeping your application modular and maintainable by grouping related components, directives, pipes, and services together. Feature modules can be imported into the root module or other feature modules.
+Here's an example of a feature module:
+
+        import { NgModule } from '@angular/core';
+        import { CommonModule } from '@angular/common';
+        import { MyComponent } from './my.component';
+
+        @NgModule({
+        declarations: [
+            MyComponent
+        ],
+        imports: [
+            CommonModule
+        ],
+        exports: [
+            MyComponent
+        ]
+        })
+        export class MyModule { }
+
+
+3. Shared modules
+    contain shared services
+    Componets used all over the app
+    Universal dependencies
+
+4. Routing Module
+    For routing
+
+
+_________________Components, Life Cycle Methods
+Building blocks of the UI, card, footer, 
+ngOnInit()
+    -excecute code when a page first loads
+
+Classes
+Lifecycle methods
+Interfaces
+Construcors
+
+
+_______________List/ Detail Page pattern
+It a common design pattern in web dev
+output()    
+input()
+    -passing data down
+
+A smart component always  passes data down to a dumb component
+
+A dumb component accepts dta using the input()
+
+creating a models folder
+-Type checking
+
+bang, null, coalescing operator
+Null checking
+Avoid introducing bugs
