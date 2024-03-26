@@ -1,4 +1,3 @@
-
 <table>
     <thead>
         <th>Name</th>
@@ -8,21 +7,7 @@
         <app-pokemon-detail
         *ngFor="let pokemon of pokemons"
         [detail]="pokemon"
+        (remove)="handleRemove($event)"
         ></app-pokemon-detail>
-
-
-  
-
-        <tr *ngFor="let pokemon of pokemons; let i = index">
-            <td class="pokemon-td" [ngClass]="{'cool-bool':pokemon.isCool}">
-            {{i}} : {{pokemon.name}}
-            </td>
-        </tr>
-
-        <tr *ngFor="let pokemon of pokemons; let i = index">
-            <td class="pokemon-td"
-            [style.backgroundColor]="(pokemon.isStylish ? '000000':'')"
-            >{{i}} : {{pokemon.name}}</td>
-        </tr>
     </tbody>
 </table>

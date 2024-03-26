@@ -24,7 +24,7 @@ export class PokemonListComponent implements OnInit{
       id:2,
       name:'pikachu',
       type:'electric',
-      isCool: false,
+      isCool: true,
       isStylish: true
     },
     {
@@ -41,6 +41,13 @@ export class PokemonListComponent implements OnInit{
   }
   ngOnInit(): void {
       
+  }
+
+  handleRemove(event: Pokemon){
+    //handling the deletion logic here
+    this.pokemons = this.pokemons.filter((pokemon : Pokemon)=>{
+      return pokemon.id != event.id; //paves way for state immutability
+    })
   }
 
 

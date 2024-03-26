@@ -5,7 +5,7 @@ Used to be called Angular Js
 Changed to Angular after shifting over to typescript
 
 Decorator pattern
-
+Build your own observeable pattern Angular
 Stack Memory
 Heap Memory
 
@@ -512,9 +512,21 @@ Construcors
 
 _______________List/ Detail Page pattern
 It a common design pattern in web dev
+
+Dumb components are children of smart components
+Smart components get data from the api
+Dumb components get data from the smart components
+      @Input() //receiving a single pokemon , dumb components receiving data
+      detail!: Pokemon; //bang, null, coalescing operator
+
+
+
 output()    
+    -passing data,state and events up a tree
+    -subject
+    -event
 input()
-    -passing data down
+    -passing data,state and events down a tree
 
 A smart component always  passes data down to a dumb component
 
@@ -526,3 +538,10 @@ creating a models folder
 bang, null, coalescing operator
 Null checking
 Avoid introducing bugs
+
+
+event handlers
+(click)=handleRemove()
+(remove)
+
+events are enclosed in circles
