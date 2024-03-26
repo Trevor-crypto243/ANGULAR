@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
+import { Pokemon } from '../../models/pokemon';
 
 //Decorator pattern
 @Component({
@@ -11,7 +12,7 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
   styleUrl: './pokemon-list.component.css'
 })
 export class PokemonListComponent implements OnInit{
-  pokemons: any[] = [
+  pokemons: Pokemon[] = [
     {
       id:1,
       name:'pikachu',
