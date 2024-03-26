@@ -545,3 +545,21 @@ event handlers
 (remove)
 
 events are enclosed in circles
+
+
+
+
+
+___________________Services and dependency injection
+ng service ldlsk;sk;
+
+When a software grows out of control
+Passing state to deeply nested components
+Avoiding the use of smart and dumb components
+Removing reliance of dependecies
+Abstracting the code
+Computationally intensive calls
+Http calls
+Database acceses
+
+

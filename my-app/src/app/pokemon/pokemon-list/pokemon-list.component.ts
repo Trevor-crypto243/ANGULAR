@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 import { Pokemon } from '../../models/pokemon';
+import { PokemonService } from '../../services/pokemon.service';
 
 //Decorator pattern
 @Component({
@@ -12,35 +13,13 @@ import { Pokemon } from '../../models/pokemon';
   styleUrl: './pokemon-list.component.css'
 })
 export class PokemonListComponent implements OnInit{
-  pokemons: Pokemon[] = [
-    {
-      id:1,
-      name:'pikachu',
-      type:'electric',
-      isCool: false,
-      isStylish: true
-    },
-    {
-      id:2,
-      name:'pikachu',
-      type:'electric',
-      isCool: true,
-      isStylish: true
-    },
-    {
-      id:3,
-      name:'pikachu',
-      type:'electric',
-      isCool: false,
-      isStylish: true
-    }
-  ];
+  pokemons!: Pokemon[];
+  constructor(private pokemonService: PokemonService){
 
-  constructor(){
  
   }
   ngOnInit(): void {
-      
+      this.pokemons = this.pokemonService.getPokemons()
   }
 
   handleRemove(event: Pokemon){
