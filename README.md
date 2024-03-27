@@ -545,3 +545,38 @@ event handlers
 (remove)
 
 events are enclosed in circles
+
+
+
+
+
+___________________Services and dependency injection
+ng service ldlsk;sk;
+
+When a software grows out of control
+Passing state to deeply nested components
+Avoiding the use of smart and dumb components
+Removing reliance of dependecies
+Abstracting the code
+Computationally intensive calls
+Http calls
+Database acceses
+
+
+_____________Observables
+Making our code asynchronous
+To make sure our UI does not freeze
+Improve performance
+
+observer(Subject)
+    -publishes information
+observarbles(subscribers)
+    -anticipate information
+
+npm install -g json-server
+json-server --watch data/db.json
+
+HttpClient
+    -observable wrapper wwith a nice feature for http requests
+    -Abstract http details
+    -you subscribe to get information e.g network requests 
