@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PokemonService } from '../services/pokemon.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -11,6 +12,7 @@ import { PokemonService } from '../services/pokemon.service';
   
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     PokemonListComponent,
     PokemonDetailComponent

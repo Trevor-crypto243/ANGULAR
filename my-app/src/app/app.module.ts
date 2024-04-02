@@ -11,7 +11,7 @@ import { PokemonModule } from "./pokemon/pokemon.module";
         AppComponent
     ],
     imports:[
-        
+        PokemonModule
     ],
     providers:[],
     bootstrap:[AppComponent]
