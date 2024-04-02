@@ -15,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     CommonModule,
     PokemonListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    HttpClientModule
   ],
 
   exports:[
