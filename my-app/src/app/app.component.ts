@@ -12,15 +12,5 @@ import { PokemonListComponent } from './pokemon/pokemon-list/pokemon-list.compon
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title:string;
-  ex:string = "Ashley";
-  pokemonName:string ="";
 
-  constructor(){
-    this.title = "Learning Angular for Cloud It";
-  }
-
-  handleClick(value: any){
-    console.log(value)
-  }
 }

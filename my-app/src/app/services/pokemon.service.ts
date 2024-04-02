@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const POKEMON_API = "http://localhost:3000/pokemon";
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,3 +18,4 @@ export class PokemonService {
   }
 }
  
+
